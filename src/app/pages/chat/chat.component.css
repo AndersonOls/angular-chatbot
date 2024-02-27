@@ -1,0 +1,10 @@
+.status{
+    p{
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+    span{
+        color: var(--online-color);
+        font-weight: 500;
+    }
+}

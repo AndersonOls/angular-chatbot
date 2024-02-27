@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './arrow-right.component.html',
-  styleUrl: './arrow-right.component.css'
 })
 export class ArrowRightComponent {
 

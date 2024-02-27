@@ -1,0 +1,25 @@
+<div class="suggestion-wrapper flex flex-col items-center text-center gap-9">
+    <div class="suggestion-topic flex flex-col items-center text-center gap-4 w-full">
+        @for (suggestionTopic of suggestionTopics; track suggestionTopic.tittle) {
+            <div class="suggestion-header">
+                @if (suggestionTopic.icon === 'doubt') {
+                    <icon-question></icon-question>
+                }@else if (suggestionTopic.icon === 'curiosity') {
+                    <icon-curiosity></icon-curiosity>
+                }@else if (suggestionTopic.icon === 'history'){
+                    <icon-history></icon-history>
+                }
+                <span>{{suggestionTopic.tittle}}</span>
+            </div>
+        
+
+            <ul class="suggestion-list flex flex-col items-center text-center gap-2 w-full">
+                @for (question of suggestionTopic.questions; track question) {
+                    <li class="w-full max-w-80 bg-slate-100 py-3 px-4 rounded-3xl font-medium text-sm cursor-pointer"> {{question}}</li>
+                }
+            </ul>
+        }
+         
+              
+    </div>
+</div>
