@@ -15,7 +15,8 @@
 
             <ul class="suggestion-list flex flex-col items-center text-center gap-2 w-full">
                 @for (question of suggestionTopic.questions; track question) {
-                    <li class="w-full max-w-80 bg-slate-100 py-3 px-4 rounded-3xl font-medium text-sm cursor-pointer"> {{question}}</li>
+                    <li class="w-full max-w-80 bg-slate-100 py-3 px-4 rounded-3xl font-medium text-sm cursor-pointer"
+                    (click)="selectQuestion(question)"> {{question}}</li>
                 }
             </ul>
         }

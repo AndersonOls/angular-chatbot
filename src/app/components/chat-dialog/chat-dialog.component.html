@@ -1,0 +1,6 @@
+<div class="conversation-wrapper h-full flex flex-col justify-end overflow-scroll items-start p-7">
+    @for (message of messages; track messages) {
+        <app-chat-response class="w-full" [message]="message"></app-chat-response>
+    }
+    
+</div>

@@ -1,1 +1,5 @@
-<p>chat-response works!</p>
+<div class="baloon-wrapper w-full flex flex-col">
+    <div class="baloon" [ngClass]="message.type">
+        <p>{{message.message}}</p>
+    </div>
+</div>

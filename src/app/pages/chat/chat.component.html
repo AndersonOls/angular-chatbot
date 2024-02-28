@@ -1,4 +1,4 @@
-<main>
+<main class="h-4/5">
     <header class="flex items-center justify-start px-7 pt-7 pb-3 border-b border-slate-300 gap-5">
         <button>
             <icon-arrow-left></icon-arrow-left>
@@ -9,7 +9,10 @@
             <span>• Online</span>
         </div>
     </header>
-    <section class="mt-2">
-        <app-chat-sugestions></app-chat-sugestions>
+    <section class="mt-2 h-full">
+        @if (messages.length < 1) {
+            <app-chat-sugestions (questionSelected)="sendSuggestedQuestion($event)"></app-chat-sugestions>
+        }
+        <app-chat-dialog [messages]="messages"></app-chat-dialog>
     </section>
 </main>
