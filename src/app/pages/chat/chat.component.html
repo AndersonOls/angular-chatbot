@@ -1,6 +1,6 @@
 <main class="h-4/5">
     <header class="flex items-center justify-start px-7 pt-7 pb-3 border-b border-slate-300 gap-5">
-        <button>
+        <button (click)="goBack()">
             <icon-arrow-left></icon-arrow-left>
         </button>
         <icon-museum></icon-museum>
@@ -11,8 +11,14 @@
     </header>
     <section class="mt-2 h-full">
         @if (messages.length < 1) {
-            <app-chat-sugestions (questionSelected)="sendSuggestedQuestion($event)"></app-chat-sugestions>
+            <app-chat-sugestions (questionSelected)="sendNewMessage($event)"></app-chat-sugestions>
         }
         <app-chat-dialog [messages]="messages"></app-chat-dialog>
     </section>
+    <form [formGroup]="chatForm">
+        <input placeholder="Escreva sua mensagem aqui" type="text" id="name" formControlName="message"/>
+        <button (click)="submit()">
+            <icon-send></icon-send>
+        </button>
+    </form>
 </main>
